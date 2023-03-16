@@ -6,16 +6,16 @@ services:
   mongodb:
   image: mongodb:v1
   container_name: mongodb
-  catalouge:
-    image: catalouge:v1
-    container_name: catalouge
+  catalogue:
+    image: catalogue:v1
+    container_name: catalogue
     depends_on:
       - mongodb
     Web:
       image: web:v1
       container_name: Web
       depends_on:
-      - catalouge
+      - catalogue
     redis:
       image: redis  
     user: 
