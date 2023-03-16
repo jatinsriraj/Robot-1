@@ -16,3 +16,12 @@ services:
       container_name: Web
       depends_on:
       - catalouge
+    redis:
+      image: redis  
+    user: 
+      image: user:v1
+      container_name: user
+      depends_on:
+      - mongodb
+      - redis
+
