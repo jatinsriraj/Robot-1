@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3'
 networks:
   frontend:
     driver: bridge
@@ -11,14 +11,16 @@ services:
     container_name: catalogue
     depends_on:
       - mongodb
-    Web:
+  web:
       image: web:v1
       container_name: Web
+      ports:
+        - 80:80
       depends_on:
       - catalogue
-    redis:
+  redis:
       image: redis  
-    user: 
+  user: 
       image: user:v1
       container_name: user
       depends_on:
